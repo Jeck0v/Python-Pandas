@@ -71,3 +71,26 @@ print(iloc)
 print("================================================================")
 print("Permet de sélectionner les lignes 0 à 2 et les colonnes 0 à 1")
 print("================================================================")
+print("================================================================")
+print("                           Graphique                            ")
+print("================================================================")
+#--------------------- Les Tracés -------------------#
+data = pd.read_csv('air_quality_no2.csv', index_col=0, parse_dates=True)
+# index_col permet de sélectionner l'index de la colonne 0
+#print(data.head())
+
+data.plot()
+plt.show()  # Affiche le Plot
+data["station_paris"].plot()
+plt.show()
+# Je ne comprend pas comment spécifier 1 graphique parmis d'autre pour l'afficher => exemple dekuple avec plusieur graph
+#----------------- Regarder plus précisément ----------#
+
+# fig, axs = plt.subplots(figsize=(12,4)) Créer une figure et des axes Matplotlib vide
+# data.plot.area(ax=axs) Utilise pandas pour placer le tracé sur la figure / l'axe
+# axs.set_ylabel("NO$_2$ concentration") Customisation de la demande
+# fig.savefig("no2_concentrations.png") Sauvegarde la Figure / L'axe
+# plt.show => Affiche le tracé
+
+#---------------- Colonnes Dérivées -----------------#
+# On reprend le tableau data
